@@ -27,3 +27,9 @@
       With this plugin maven will generate all java classes that was specified on the `resources/person.xsd` file.
     * Once you have the application running, go to this URL to see what the consumers will need: `http://localhost:8090/ws/generatingPeople.wsdl`
       (if you wanto to change this URL go to the file `config/SoapConfig.java` and confugure as tou want)
+
+# Car MS
+* Running on port 8091
+* WebService to be consumed
+* Its pretty the same thing with Person MS
+

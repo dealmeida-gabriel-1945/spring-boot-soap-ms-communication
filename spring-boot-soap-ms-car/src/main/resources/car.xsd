@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            targetNamespace="generating_cars"
+            elementFormDefault="qualified">
+
+    <xsd:element name="GenerateCarRequest">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="yearOfConstruction" type="xsd:string" />
+                <xsd:element name="plateNumber" type="xsd:string" />
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="Car">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="yearOfConstruction" type="xsd:string" />
+                <xsd:element name="plateNumer" type="xsd:string"/>
+                <xsd:element name="color" type="xsd:string" />
+                <xsd:element name="brand" type="xsd:string"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>
