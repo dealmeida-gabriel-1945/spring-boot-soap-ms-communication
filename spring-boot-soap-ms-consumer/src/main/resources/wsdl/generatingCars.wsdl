@@ -1,0 +1,46 @@
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="generating_cars" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="generating_cars" targetNamespace="generating_cars">
+    <wsdl:types>
+        <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="generating_cars">
+            <xsd:element name="GenerateCarRequest">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="yearOfConstruction" type="xsd:string"/>
+                        <xsd:element name="plateNumber" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="Car">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="yearOfConstruction" type="xsd:string"/>
+                        <xsd:element name="plateNumer" type="xsd:string"/>
+                        <xsd:element name="color" type="xsd:string"/>
+                        <xsd:element name="brand" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+        </xsd:schema>
+    </wsdl:types>
+    <wsdl:message name="GenerateCarRequest">
+        <wsdl:part element="tns:GenerateCarRequest" name="GenerateCarRequest"> </wsdl:part>
+    </wsdl:message>
+    <wsdl:portType name="Carindicator">
+        <wsdl:operation name="GenerateCar">
+            <wsdl:input message="tns:GenerateCarRequest" name="GenerateCarRequest"> </wsdl:input>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="CarindicatorSoap11" type="tns:Carindicator">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="GenerateCar">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="GenerateCarRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="CarindicatorService">
+        <wsdl:port binding="tns:CarindicatorSoap11" name="CarindicatorSoap11">
+            <soap:address location="http://localhost:8091/ws"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

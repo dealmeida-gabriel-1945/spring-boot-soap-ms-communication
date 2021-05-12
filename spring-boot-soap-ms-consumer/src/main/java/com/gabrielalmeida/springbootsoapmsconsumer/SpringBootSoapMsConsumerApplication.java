@@ -8,6 +8,11 @@ public class SpringBootSoapMsConsumerApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringBootSoapMsConsumerApplication.class, args);
+		System.out.println("============================================================================");
+		System.out.println("= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = ");
+		System.out.println("--------------------------> THIS SERVICE IS UP! <---------------------------");
+		System.out.println("= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = ");
+		System.out.println("============================================================================");
 	}
 
 }
