@@ -1,0 +1,46 @@
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="generating_people" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="generating_people" targetNamespace="generating_people">
+    <wsdl:types>
+        <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="generating_people">
+            <xsd:element name="GeneratePersonRequest">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <!--     TRUE for woman; FALSE for man     -->
+                        <xsd:element name="personSex" type="xsd:boolean"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="Person">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="name" type="xsd:string"/>
+                        <xsd:element name="lastName" type="xsd:string"/>
+                        <xsd:element name="sex" type="xsd:string"/>
+                        <xsd:element name="age" type="xsd:int"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+        </xsd:schema>
+    </wsdl:types>
+    <wsdl:message name="GeneratePersonRequest">
+        <wsdl:part element="tns:GeneratePersonRequest" name="GeneratePersonRequest"> </wsdl:part>
+    </wsdl:message>
+    <wsdl:portType name="Personindicator">
+        <wsdl:operation name="GeneratePerson">
+            <wsdl:input message="tns:GeneratePersonRequest" name="GeneratePersonRequest"> </wsdl:input>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="PersonindicatorSoap11" type="tns:Personindicator">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="GeneratePerson">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="GeneratePersonRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="PersonindicatorService">
+        <wsdl:port binding="tns:PersonindicatorSoap11" name="PersonindicatorSoap11">
+            <soap:address location="http://localhost:8090/ws"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>
