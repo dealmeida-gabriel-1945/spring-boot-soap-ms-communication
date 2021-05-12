@@ -43,3 +43,5 @@
 * Inside the file `config/SoapConfig.java` we need to specify which package the marshaller need to watch.
 * Inside de package `service/feignClients/*` we will build ours feign clients to retrieve the data from Car MS and Person MS.
 
+## Exemple of a request to the Consumer MS with Postman
+![img.png](img.png)
