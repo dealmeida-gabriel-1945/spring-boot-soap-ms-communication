@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/spring-boot-soap-ms-car/spring-boot-soap-ms-car.iml" filepath="$PROJECT_DIR$/spring-boot-soap-ms-car/spring-boot-soap-ms-car.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-boot-soap-ms-consumer/spring-boot-soap-ms-consumer.iml" filepath="$PROJECT_DIR$/spring-boot-soap-ms-consumer/spring-boot-soap-ms-consumer.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-boot-soap-ms-person/spring-boot-soap-ms-person.iml" filepath="$PROJECT_DIR$/spring-boot-soap-ms-person/spring-boot-soap-ms-person.iml" />
     </modules>
   </component>

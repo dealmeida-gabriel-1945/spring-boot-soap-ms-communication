@@ -33,3 +33,13 @@
 * WebService to be consumed
 * Its pretty the same thing with Person MS
 
+# Consumer MS
+* Running on port 8092
+* WebService to consume Car MS and Person MS
+* Inside the directory `resources/wsdl/*` we need to create wsdl files for each webservice SOAP we want to consume.
+  * In that case, you can access the wsdl data from Person MS and Car MS by entering in this URL (with the MSs running):
+    * `http://localhost:8090/ws/generatingPeople.wsdl`
+    * `http://localhost:8091/ws/generatingCars.wsdl`
+* Inside the file `config/SoapConfig.java` we need to specify which package the marshaller need to watch.
+* Inside de package `service/feignClients/*` we will build ours feign clients to retrieve the data from Car MS and Person MS.
+
