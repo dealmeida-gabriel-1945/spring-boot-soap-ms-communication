@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            targetNamespace="generating_people"
+            elementFormDefault="qualified">
+
+    <xsd:element name="GeneratePersonRequest">
+        <xsd:complexType>
+            <xsd:sequence>
+                <!--    TRUE for woman; FALSE for man    -->
+                <xsd:element name="personSex" type="xsd:boolean" />
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="Person">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="name" type="xsd:string" />
+                <xsd:element name="lastName" type="xsd:string"/>
+                <xsd:element name="sex" type="xsd:string" />
+                <xsd:element name="age" type="xsd:int"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>
